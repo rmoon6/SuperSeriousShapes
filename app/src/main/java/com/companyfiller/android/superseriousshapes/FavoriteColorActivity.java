@@ -3,7 +3,6 @@ package com.companyfiller.android.superseriousshapes;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +31,6 @@ public class FavoriteColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorite_color);
 
         mp = MediaPlayer.create(this, R.raw.pick_color);
-        mp.start();
 
         redButton = (Button) findViewById(R.id.red_button);
         redButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +55,18 @@ public class FavoriteColorActivity extends AppCompatActivity {
                 goToShowShape(BLUE);
             }
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mp.start();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mp.stop();
     }
 
     private void goToShowShape(int colorCode) {

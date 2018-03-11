@@ -8,7 +8,7 @@ public class ShapeInfoHolder {
 
     private static ShapeInfoHolder shapeInfoHolder;
 
-    private int shapecode;
+    private int shapeCode;
     private int colorCode;
 
     public static ShapeInfoHolder getInstance() {
@@ -20,7 +20,7 @@ public class ShapeInfoHolder {
     }
 
     public void setShapeCode(int i) {
-        shapecode = i;
+        shapeCode = i;
     }
 
     public void setColorCode(int i) {
@@ -28,7 +28,7 @@ public class ShapeInfoHolder {
     }
 
     public int getShapeCode() {
-        return shapecode;
+        return shapeCode;
     }
 
     public int getColorCode() {
